@@ -73,7 +73,19 @@ var viewport = {
 var marker = Object.create(spriteObject);
 sprites.push(marker);
 
-
+//Center the background over the canvas
+//the center of the background and the centre of the fixed canvas
+//would have to be at the same co-ordinates
+//background.x + background.width/2 = canvas.width/2;
+	
+background.x = canvas.width/2 - background.width/2;
+background.y = canvas.height/2 - background.height/2;
+	
+//Center the marker over the background
+//Using the same philosophy as the above we can say
+	
+marker.x = (background.x + background.width/2) - marker.width/2;
+marker.y = (background.y + background.height/2) - marker.height/2;
 
 //###########################################//
 
@@ -188,20 +200,6 @@ function playGame() {
 		marker.vy = 0;
 	}
 	
-	
-	//Center the background over the canvas
-	//the center of the background and the centre of the fixed canvas
-	//would have to be at the same co-ordinates
-	//background.x + background.width/2 = canvas.width/2;
-	
-	background.x = canvas.width/2 - background.width/2;
-	background.y = canvas.height/2 - background.height/2;
-	
-	//Center the marker over the background
-	//Using the same philosophy as the above we can say
-	
-	marker.x = (background.x + background.width/2) - marker.width/2;
-	marker.y = (background.y + background.height/2) - marker.height/2;
 	
 	
 }
